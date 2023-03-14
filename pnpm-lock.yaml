@@ -4,11 +4,13 @@ specifiers:
   '@apollo/server': ^4.5.0
   graphql: ^16.6.0
   graphql-tag: ^2.12.6
+  lodash: ^4.17.21
 
 dependencies:
   '@apollo/server': 4.5.0_graphql@16.6.0
   graphql: 16.6.0
   graphql-tag: 2.12.6_graphql@16.6.0
+  lodash: 4.17.21
 
 packages:
 
@@ -638,6 +640,10 @@ packages:
 
   /lodash.sortby/4.7.0:
     resolution: {integrity: sha512-HDWXG8isMntAyRF5vZ7xKuEvOhT4AhlRt/3czTSjvGUxjYCBVRQY48ViDHyfYz9VIoBkW4TMGQNapx+l3RUwdA==}
+    dev: false
+
+  /lodash/4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
 
   /loglevel/1.8.1:
