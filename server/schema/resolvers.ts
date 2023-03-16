@@ -1,11 +1,13 @@
 import { UserList, MovieList } from "../FakeData.js";
 import _ from "lodash";
+import type { Resolvers } from "./types.js"
 
-export const resolvers = {
+export const resolvers: Resolvers = {
   Query: {
     // User resolvers
     users() {
-      return UserList;
+      if (UserList) return { users: UserList };
+      return { message: "Error" };
     },
     user(parent, { id }) {
       const user = _.find(UserList, { id: Number(id) });
@@ -14,7 +16,9 @@ export const resolvers = {
 
     // Movie resolvers
     movies() {
-      return MovieList;
+      return MovieList.map((movie) => {
+        return { ...movie, id: String(movie.id) }
+      });
     },
     movie(parent, { name }) {
       const movie = _.find(MovieList, { name });
@@ -54,6 +58,15 @@ export const resolvers = {
         MovieList,
         (movie) => movie.year >= 2000 && movie.year <= 2010
       );
+    },
+  },
+
+  UsersResult: {
+    __resolveType(obj) {
+      if (obj.users) {
+        return { users: obj.users };
+      }
+      return obj.message;
     },
   },
 };

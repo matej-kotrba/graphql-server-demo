@@ -55,12 +55,16 @@ export const UserList = [
   {
     id: 5,
     name: "Robin Williams",
+    username: "janesmith",
+
     age: 35,
     nationality: "GERNMANY",
   },
   {
     id: 6,
     name: "Lukas Moorse",
+    username: "janesmith",
+
     age: 40,
     nationality: "POLAND",
   },
